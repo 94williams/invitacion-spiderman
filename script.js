@@ -157,7 +157,7 @@ function observeReveal() {
   const foliageObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
     entry.target.classList.toggle("in-view", entry.isIntersecting);
   }));
-  document.querySelectorAll(".celebración-foliage, .cover-sun").forEach((element) => foliageObserver.observe(element));
+  document.querySelectorAll(".theme-decor").forEach((element) => foliageObserver.observe(element));
 }
 
 function updateScroll() {
