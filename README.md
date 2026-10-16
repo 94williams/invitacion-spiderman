@@ -9,3 +9,5 @@ Diseño y recursos propios de esta versión: index.html, styles.css, theme.css, 
 Créditos en CREDITOS.md. Animaciones al scroll una vez, soporte de movimiento reducido, álbum accesible, calendario y confirmación por WhatsApp.
 
 Personalidad temática: tipografía de titulares alojada localmente, decoraciones hechas con CSS y animaciones específicas de cada temática. Los adornos se animan solo al estar visibles; se respeta movimiento reducido.
+
+Versión 4: relato propio, itinerario temático, contornos fotográficos y secciones con formas variadas. Decoraciones de CSS sin SVG; fotos ampliadas sin recortes.

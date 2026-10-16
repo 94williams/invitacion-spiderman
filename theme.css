@@ -27,3 +27,36 @@ h1,h2,h3{font-weight:700;letter-spacing:-1.5px}h2{font-size:clamp(34px,4.2vw,53p
 .js-motion .theme-decor.in-view span,.js-motion .theme-decor.in-view span:before,.js-motion .theme-decor.in-view span:after{animation-play-state:running!important}
 @media(max-width:700px){.theme-decor{opacity:.12}.cover-frame>.theme-decor{opacity:.28}.countdown-section>.theme-decor,.footer>.theme-decor{opacity:.2}}
 @media(prefers-reduced-motion:reduce){.theme-decor span,.theme-decor span:before,.theme-decor span:after,.cover-art{animation:none!important}.js-motion .text-reveal,.js-motion .text-sequence .text-part,.js-motion .reveal{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}}
+
+/* Story, picture frames and section silhouettes. */
+.identity-card{position:relative;margin:0 0 32px;padding:22px 24px;text-align:left;max-width:430px;background:var(--paper);border:1px solid var(--theme-accent);box-shadow:0 8px 24px #17232f0a}
+.identity-card small{display:block;font:600 8px/1.6 var(--sans);letter-spacing:1.6px;color:var(--theme-accent)}
+.identity-card strong{display:block;font-size:25px;line-height:1.2;margin:9px 0;color:var(--forest)}
+.identity-card span,.identity-card p{display:block;font:500 11px/1.7 var(--sans);color:var(--muted)}
+.identity-card p{margin-top:9px}
+.portrait-arch img{filter:none;border-radius:inherit}.memory img{border:0;filter:none}
+.memory{padding:0;background:transparent;border:0}.memory span{padding:0 4px}.memory:nth-child(even){margin-top:32px}
+.album-photo{transform:none;padding:7px;box-shadow:none;background:var(--theme-accent)}
+.album-photo:before,.album-photo:after{display:none}
+.album-page{background:var(--paper);box-shadow:none;border:0}.photo-dialog .album-caption{transform:none;font-family:var(--sans);font-size:25px;font-weight:700}
+.photo-dialog::backdrop{background:#111a2de8}.photo-dialog{border:2px solid var(--theme-accent);border-radius:18px}
+.album-photo img{border-radius:5px}.rsvp-actions .button{white-space:normal;line-height:1.45}
+.story-copy>.identity-card~.eyebrow{margin-top:12px}
+@media(max-width:700px){.identity-card{margin:0 auto 32px;padding:20px}.identity-card strong{font-size:23px}.memory:nth-child(even){margin-top:28px}.photo-dialog .album-caption{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.site-machine,.site-machine *,.identity-card,.comic-sound,.text-visible .text-part{animation:none!important;transform:none!important}}
+.theme-spiderman .identity-card{border:3px solid #173356;border-radius:5px;box-shadow:6px 6px 0 #c82e3b;background:radial-gradient(#17335612 1px,transparent 1px) 0 0/7px 7px,#fff}
+.theme-spiderman .identity-card strong{font-family:'Spider Display',var(--sans);font-size:34px;color:#c82e3b;letter-spacing:.6px}
+.theme-spiderman .portrait-arch{padding:7px;border:0;border-radius:8px 40px 8px 8px;background:linear-gradient(140deg,#c82e3b 45%,#173356 45%);box-shadow:8px 8px 0 #1733561a}
+.theme-spiderman .portrait-arch img{border-radius:4px 32px 4px 4px}
+.theme-spiderman .memory img{border:5px solid #173356;border-radius:4px 22px 4px 4px;box-shadow:5px 5px 0 #c82e3b;clip-path:polygon(0 0,88% 0,100% 7%,100% 100%,0 100%)}
+.theme-spiderman .memory:nth-child(even) img{border-color:#c82e3b;box-shadow:5px 5px 0 #173356;clip-path:polygon(0 7%,12% 0,100% 0,100% 100%,0 100%);border-radius:22px 4px 4px 4px}
+.theme-spiderman .album-photo{background:repeating-linear-gradient(135deg,#173356 0 15px,#c82e3b 15px 30px);border:2px solid #173356;border-radius:7px}
+.theme-spiderman .story{border-radius:45px 5px 45px 5px;border-bottom:3px solid #173356}
+.theme-spiderman .countdown-section{clip-path:polygon(0 3%,100% 0,100% 96%,0 100%);padding:100px 25px;background:radial-gradient(#ffffff09 1px,transparent 1.5px) 0 0/8px 8px,linear-gradient(135deg,#173356,#a4243d)}
+.theme-spiderman .countdown-section:before,.theme-spiderman .countdown-section:after{display:none}
+.theme-spiderman .itinerary{border-radius:6px 70px 6px 30px}.theme-spiderman .route-card{border:3px solid #173356;border-radius:3px 28px 3px 3px;box-shadow:6px 6px 0 #c82e3250}.theme-spiderman .route-card:nth-child(2){border-radius:28px 3px 3px 3px}
+.theme-spiderman .venue-section{border-radius:0 65px 0 65px}.theme-spiderman .details-section{border-radius:60px 0 60px 0;border-top:3px solid #c82e3b}.theme-spiderman .rsvp-form{border:3px solid #173356;border-radius:4px 32px 4px 4px;box-shadow:7px 7px 0 #c82e3b25}
+.comic-sound{position:relative;width:max-content;margin:0 auto 35px;padding:9px 28px;font:36px 'Spider Display',var(--sans);color:#173356;background:#ffd576;clip-path:polygon(5% 5%,25% 13%,35% 0,49% 12%,70% 0,76% 14%,100% 12%,91% 45%,100% 70%,77% 74%,72% 100%,51% 85%,27% 100%,24% 79%,0 80%,9% 49%);transform:rotate(-6deg)}
+.city-skyline{left:0;right:0;bottom:0;height:60px;background:currentColor;opacity:.35;clip-path:polygon(0 100%,0 50%,5% 50%,5% 25%,12% 25%,12% 60%,18% 60%,18% 15%,26% 15%,26% 45%,34% 45%,34% 5%,35% 5%,35% 0,36% 5%,38% 5%,38% 45%,47% 45%,47% 55%,55% 55%,55% 20%,64% 20%,64% 60%,70% 60%,70% 35%,80% 35%,80% 5%,87% 5%,87% 55%,94% 55%,94% 25%,100% 25%,100% 100%)}
+.theme-spiderman .botanical-divider{height:55px}.theme-spiderman .botanical-divider span{height:2px;background:#17335650}.theme-spiderman .botanical-divider b{color:#c82e3b;font-family:'Spider Display';font-size:14px;letter-spacing:1px}
+@media(max-width:700px){.theme-spiderman .story{border-radius:30px 4px 30px 4px}.theme-spiderman .countdown-section{padding:80px 25px}.theme-spiderman .venue-section{border-radius:0 40px 0 40px}.theme-spiderman .details-section{border-radius:40px 0 40px 0}.city-skyline{height:40px}}
