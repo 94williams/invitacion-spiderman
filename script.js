@@ -41,7 +41,7 @@ function downloadICS() {
   const end = new Date(eventDate.getTime() + 4 * 3600000);
   const format = (date) => date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
   const escape = (value) => String(value).replace(/\\/g, "\\\\").replace(/\r?\n/g, "\\n").replace(/,/g, "\\,").replace(/;/g, "\\;");
-  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mi Pequeno Safari//Invitacion ES//", "CALSCALE:GREGORIAN", "BEGIN:VEVENT", `UID:${eventDate.getTime()}@invitacion-safari`, `DTSTAMP:${format(new Date())}`, `DTSTART:${format(eventDate)}`, `DTEND:${format(end)}`, `SUMMARY:${escape(`${CONFIG.edad} años de ${CONFIG.nombre}`)}`, `DESCRIPTION:${escape(`El safari de ${CONFIG.nombre}. ¡Te esperamos!`)}`, `LOCATION:${escape(`${CONFIG.lugar.nombre} - ${CONFIG.lugar.direccion}`)}`, "END:VEVENT", "END:VCALENDAR"];
+  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mi Pequeno Fiesta//Invitacion ES//", "CALSCALE:GREGORIAN", "BEGIN:VEVENT", `UID:${eventDate.getTime()}@invitacion-celebración`, `DTSTAMP:${format(new Date())}`, `DTSTART:${format(eventDate)}`, `DTEND:${format(end)}`, `SUMMARY:${escape(`${CONFIG.edad} años de ${CONFIG.nombre}`)}`, `DESCRIPTION:${escape(`El celebración de ${CONFIG.nombre}. ¡Te esperamos!`)}`, `LOCATION:${escape(`${CONFIG.lugar.nombre} - ${CONFIG.lugar.direccion}`)}`, "END:VEVENT", "END:VCALENDAR"];
   // RFC 5545: fold long content lines at 75 UTF-8 octets, without splitting a code point.
   const fold = (line) => {
     const encoder = new TextEncoder();
@@ -56,7 +56,7 @@ function downloadICS() {
   const url = URL.createObjectURL(new Blob([lines.map(fold).join("\r\n") + "\r\n"], { type: "text/calendar;charset=utf-8" }));
   const link = document.createElement("a");
   link.href = url;
-  link.download = "Safari-Aldo-Aldair.ics";
+  link.download = "Invitacion-spiderman-Aldo-Aldair.ics";
   document.body.appendChild(link); link.click(); link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   showToast("Fecha descargada. Abre el archivo con tu calendario.");
@@ -100,7 +100,7 @@ async function rsvpSubmit(event) {
   if (!Number.isInteger(count) || count < 1 || count > 6) { showToast("Elige entre 1 y 6 personas."); return; }
   const contact = CONFIG.whatsappContacts.find((item) => item.id === event.submitter?.dataset.contact);
   if (!contact) { showToast("Elige con quién deseas confirmar."); return; }
-  const message = `¡Hola! Soy ${name}. Confirmo nuestra asistencia al safari de ${CONFIG.nombre} por sus ${CONFIG.edad} años. Asistiremos ${count} ${count === 1 ? "persona" : "personas"}. ¡Nos vemos en la aventura!`;
+  const message = `¡Hola! Soy ${name}. Confirmo nuestra asistencia al celebración de ${CONFIG.nombre} por sus ${CONFIG.edad} años. Asistiremos ${count} ${count === 1 ? "persona" : "personas"}. ¡Nos vemos en la aventura!`;
   const url = createWhatsAppUrl(contact.phone, message);
   if (!url) { showToast("El número de WhatsApp no es válido."); return; }
   // Open during the user's click; asynchronous saving must not trigger popup blocking.
@@ -120,7 +120,7 @@ async function rsvpSubmit(event) {
 }
 
 async function shareInvitation() {
-  const data = { title: `El safari de ${CONFIG.nombre}`, text: `¡Acompáñame a celebrar mis ${CONFIG.edad} años!`, url: window.location.href };
+  const data = { title: `El celebración de ${CONFIG.nombre}`, text: `¡Acompáñame a celebrar mis ${CONFIG.edad} años!`, url: window.location.href };
   try {
     if (navigator.share) await navigator.share(data);
     else if (navigator.clipboard) { await navigator.clipboard.writeText(data.url); showToast("Enlace copiado. ¡Comparte la aventura!"); }
@@ -157,7 +157,7 @@ function observeReveal() {
   const foliageObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
     entry.target.classList.toggle("in-view", entry.isIntersecting);
   }));
-  document.querySelectorAll(".safari-foliage, .cover-sun").forEach((element) => foliageObserver.observe(element));
+  document.querySelectorAll(".celebración-foliage, .cover-sun").forEach((element) => foliageObserver.observe(element));
 }
 
 function updateScroll() {
