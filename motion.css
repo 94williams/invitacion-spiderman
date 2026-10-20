@@ -1,0 +1,39 @@
+/* Motion direction: web swings, angled panels and comic lettering stamps. */
+@media(prefers-reduced-motion:no-preference){
+body.experience.theme-spiderman.js-motion .reveal,
+body.experience.theme-spiderman.js-motion .text-reveal,
+body.experience.theme-spiderman.js-motion .text-sequence .text-part{transition:none;animation:none;transform:none;filter:none}
+body.experience.theme-spiderman.js-motion .reveal:not(.visible){opacity:0;transform:none}
+body.experience.theme-spiderman.js-motion .reveal.visible{opacity:1;transform:none;animation:spider-web-swing 850ms cubic-bezier(.2,.7,.25,1) var(--motion-delay,0ms) backwards;transform-origin:75% 0}
+body.experience.theme-spiderman.js-motion .story-portrait.reveal.visible{animation-name:spider-photo-sling;animation-duration:1050ms;transform-origin:50% -35px}
+body.experience.theme-spiderman.js-motion .section-heading.reveal.visible,
+body.experience.theme-spiderman.js-motion .story-copy.reveal.visible,
+body.experience.theme-spiderman.js-motion .rsvp-heading.reveal.visible{animation:spider-caption-stamp 560ms cubic-bezier(.18,.9,.25,1) var(--motion-delay,0ms) backwards}
+body.experience.theme-spiderman.js-motion .route-card.reveal.visible{animation-name:spider-panel-snap;animation-duration:700ms}
+body.experience.theme-spiderman.js-motion .route-card:nth-child(2){--motion-angle:5deg;--motion-delay:110ms}
+body.experience.theme-spiderman.js-motion .route-card:nth-child(3){--motion-angle:-5deg;--motion-delay:220ms}
+body.experience.theme-spiderman.js-motion .memory.reveal.visible{animation-name:spider-photo-sling;animation-duration:950ms;transform-origin:50% 0}
+body.experience.theme-spiderman.js-motion .memory:nth-child(even){--motion-angle:7deg;--motion-side:20px;--motion-delay:100ms}
+body.experience.theme-spiderman.js-motion .memory:nth-child(3){--motion-delay:160ms}
+body.experience.theme-spiderman.js-motion .memory:nth-child(5){--motion-delay:200ms}
+body.experience.theme-spiderman.js-motion .text-reveal:not(.text-visible),
+body.experience.theme-spiderman.js-motion .text-sequence:not(.text-visible) .text-part{opacity:0;transform:none}
+body.experience.theme-spiderman.js-motion .text-reveal.text-visible,
+body.experience.theme-spiderman.js-motion .text-sequence.text-visible .text-part{opacity:1;transform:none;animation:spider-letter-pop 540ms cubic-bezier(.17,.9,.25,1) var(--text-delay,0ms) backwards}
+body.experience.theme-spiderman.js-motion .text-sequence.text-visible em.text-part{animation-delay:130ms}
+body.experience.theme-spiderman.js-motion .comic-sound.visible{animation:spider-wow 750ms cubic-bezier(.15,.9,.2,1) 80ms backwards}
+body.experience.theme-spiderman.js-motion .cover-art{animation:spider-cover-swing 1250ms cubic-bezier(.15,.7,.25,1) 180ms backwards!important;transform-origin:80% 0}
+body.experience.theme-spiderman.js-motion .cover-frame:after{content:'';display:block;position:absolute;inset:0 23% auto auto;width:1px;height:100px;border:0;background:#fff9e4;box-shadow:0 0 0 1px #152c4618;z-index:3;pointer-events:none;transform-origin:top;animation:spider-thread-cast 1400ms ease-out 100ms both}
+body.experience.theme-spiderman .button:after{display:none}
+@media(hover:hover){body.experience.theme-spiderman .button:hover{transform:rotate(-2deg) translateY(-2px);transition:transform 180ms cubic-bezier(.2,.8,.2,1)}}
+body.experience.theme-spiderman .button:active{transform:rotate(1deg) scale(.97)}
+body.experience.theme-spiderman.js-motion .reveal:focus-within{animation:none!important;opacity:1!important;clip-path:none!important;transform:none!important}
+@keyframes spider-web-swing{0%{opacity:0;transform:rotate(-7deg) translateX(-22px)}18%{opacity:1}62%{transform:rotate(2deg) translateX(3px)}84%{transform:rotate(-.7deg)}100%{opacity:1;transform:none}}
+@keyframes spider-photo-sling{0%{opacity:0;transform:translate(var(--motion-side,-22px),-12px) rotate(var(--motion-angle,-7deg))}18%{opacity:1}62%{transform:translate(0,0) rotate(2deg)}82%{transform:rotate(-.8deg)}100%{opacity:1;transform:none}}
+@keyframes spider-panel-snap{0%{opacity:0;transform:translateX(24px) rotate(var(--motion-angle,-5deg)) scale(.94)}18%{opacity:1}72%{transform:translateX(-2px) rotate(1deg) scale(1.01)}100%{opacity:1;transform:none}}
+@keyframes spider-caption-stamp{0%{opacity:0;transform:scale(.91) rotate(-2deg)}16%{opacity:1}65%{transform:scale(1.025) rotate(.6deg)}100%{opacity:1;transform:none}}
+@keyframes spider-letter-pop{0%{opacity:0;transform:scale(.82) rotate(-4deg)}18%{opacity:1}65%{transform:scale(1.055) rotate(1deg)}100%{opacity:1;transform:none}}
+@keyframes spider-wow{0%{opacity:0;transform:scale(.55) rotate(-18deg)}18%{opacity:1}55%{transform:scale(1.1) rotate(-3deg)}100%{opacity:1;transform:scale(1) rotate(-6deg)}}
+@keyframes spider-cover-swing{from{transform:translateX(28px) rotate(5deg) scale(1.06)}62%{transform:translateX(-4px) rotate(-1deg) scale(1.02)}to{transform:none}}
+@keyframes spider-thread-cast{0%{transform:scaleY(0) rotate(-6deg);opacity:0}25%{opacity:.8;transform:scaleY(1) rotate(-6deg)}65%{transform:scaleY(1) rotate(3deg)}100%{opacity:.6;transform:scaleY(1) rotate(0)}}
+}
