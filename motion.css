@@ -23,7 +23,7 @@ body.experience.theme-spiderman.js-motion .text-sequence.text-visible .text-part
 body.experience.theme-spiderman.js-motion .text-sequence.text-visible em.text-part{animation-delay:130ms}
 body.experience.theme-spiderman.js-motion .comic-sound.visible{animation:spider-wow 750ms cubic-bezier(.15,.9,.2,1) 80ms backwards}
 body.experience.theme-spiderman.js-motion .cover-art{animation:spider-cover-swing 1250ms cubic-bezier(.15,.7,.25,1) 180ms backwards!important;transform-origin:80% 0}
-body.experience.theme-spiderman.js-motion .cover-frame:after{content:'';display:block;position:absolute;inset:0 23% auto auto;width:1px;height:100px;border:0;background:#fff9e4;box-shadow:0 0 0 1px #152c4618;z-index:3;pointer-events:none;transform-origin:top;animation:spider-thread-cast 1400ms ease-out 100ms both}
+body.experience.theme-spiderman.js-motion .cover-frame:after{content:'';display:block;position:absolute;inset:0 23% auto auto;width:1px;height:100px;border:0;background:linear-gradient(#152c4670,#c52e3c80);box-shadow:0 0 0 1px #152c4618;z-index:3;pointer-events:none;transform-origin:top;animation:spider-thread-cast 1400ms ease-out 100ms both}
 body.experience.theme-spiderman .button:after{display:none}
 @media(hover:hover){body.experience.theme-spiderman .button:hover{transform:rotate(-2deg) translateY(-2px);transition:transform 180ms cubic-bezier(.2,.8,.2,1)}}
 body.experience.theme-spiderman .button:active{transform:rotate(1deg) scale(.97)}
